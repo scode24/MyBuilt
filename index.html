@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Built</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <script type="text/javascript" src="scripts/data.json"></script>
+    <script src="scripts/dialog.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+
+<body onload="init()">
+    <div id="header">
+        <div id="title">
+            <object data="./assets/icons/code_icon.svg" title="code icon"></object>&nbsp; <strong>This I
+                Built</strong>
+        </div>
+        <div id="search">
+            <select name="searchBy" id="searchBy">
+            </select>
+            <input id="searchTxt" placeholder="Search by project info" onkeydown="searchOnKeyDown(event)" />
+            <button id="searchBtn" type="button" title="searchBtn" onclick="search('mid-scr')">
+                <object data="./assets/icons/search_icon.svg" width="12" title="search icon"></object>
+            </button>
+            <button id="clearBtn" type="button" title="searchBtn" onclick="clearSearch('mid-scr-clear')">
+                <object data="./assets/icons/search_clear_icon.svg" width="12" title="clear icon"></object>
+            </button>
+        </div>
+        <div id="options">
+            <div id="option-box">
+                <div class="option" id="searchOpt">
+                    <div onclick="searchOnInput()">
+                        <object data="./assets/icons/search_icon.svg" title="search icon" width="20"
+                            height="20"></object>
+                    </div>
+                    <span>Search</span>
+                </div>
+                <div class="option" id="chatOpt" style="display: none;">
+                    <div onclick="toggleView('chat')">
+                        <object data="./assets/icons/chat_icon.svg" title="chat icon" width="20" height="20"></object>
+                    </div>
+                    <span>Bot</span>
+                </div>
+                <div class="option" id="projectOpt">
+                    <div onclick="toggleView('project')">
+                        <object data="./assets/icons/project_icon.svg" title="project icon" width="20"
+                            height="20"></object>
+                    </div>
+                    <span>Project</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="small-scr-search">
+        <select name="searchBy" id="smallScrSearchBy">
+        </select>
+        <input id="smallScrSearchTxt" placeholder="Search by project info" onkeydown="searchOnKeyDown(event)" />
+        <button id="smallScrSearchBtn" type="button" title="searchBtn" onclick="search('small-scr')">
+            <object data="./assets/icons/search_icon.svg" width="12" title="search icon"></object>
+        </button>
+        <button id="smallScrClearBtn" type="button" title="clearBtn" onclick="clearSearch('small-scr-clear')">
+            <object data="./assets/icons/search_clear_icon.svg" width="12" title="clear icon"></object>
+        </button>
+    </div>
+    <div id="main">
+        <div id="left">
+            <div id="user-info">
+                <img src="assets/acc-pic.png" alt="User pic" />
+                <div id="name">
+                    <span>Hi, my name is</span>
+                    <strong id="candNameId"></strong>
+                </div>
+                <br />
+            </div>
+
+            <div id="dialog-box">
+                <div id="message-display">
+                    <ul id="message-list">
+                        <!--Here messages will appear-->
+                    </ul>
+                </div>
+                <br />
+                <div id="message-input">
+                    <input id="messageTxt" type="text" placeholder="Enter you question"
+                        onkeydown="askOnKeyDown(event)" />
+                    <button id="askBtn" onclick="ask()" type="button" title="askBtn">
+                        <object data="./assets/icons/send_icon.svg" title="send_icon"></object>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <ul id="project-list">
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>

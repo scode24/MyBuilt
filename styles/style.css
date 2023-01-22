@@ -1,0 +1,340 @@
+:root {
+    --primary-color: #3944F7;
+    --secondary-color: whitesmoke;
+}
+
+body {
+    margin: 0;
+    background-color: var(--secondary-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+select {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+button:hover {
+    background-color: green;
+}
+
+object {
+    pointer-events: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#header #title {
+    flex: 1;
+    align-self: center;
+}
+
+#header #search {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#header #search input {
+    width: 50%;
+}
+
+#header #options {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: end;
+}
+
+#options #option-box {
+    display: flex;
+    flex-direction: row;
+}
+
+#option-box .option {
+    display: none;
+}
+
+#option-box #option span {
+    margin-top: 5px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#left {
+    flex: 1;
+}
+
+#right {
+    flex: 3;
+    padding-left: 50px;
+    padding-top: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#right .project-box {
+    width: 60%;
+    background-color: white;
+    /* border: 1px solid var(--primary-color); */
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.project-box .title {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+}
+
+.project-box .slides {
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    position: relative;
+}
+
+.project-box .slides img {
+    cursor: pointer;
+}
+
+.slides .clickText {
+    position: absolute;
+    font-size: small;
+    top: 90%;
+    left: 70%;
+    background-color: rgb(233, 233, 233);
+    padding: 5px;
+}
+
+.project-box .description {
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: justify;
+    border-bottom: 1px solid gainsboro;
+}
+
+.project-box .tech-stack-container {
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    overflow-x: auto;
+}
+
+.tech-stack-container .tech-stack {
+    margin: 5px 0px 5px 5px;
+    padding: 5px;
+    white-space: nowrap;
+    height: fit-content;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.tech-stack-container .tech-stack-primary {
+    margin: 5px 0px 5px 5px;
+    padding: 5px;
+    white-space: nowrap;
+    height: fit-content;
+    background-color: rgb(20, 177, 20);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.description strong {
+    color: var(--primary-color);
+}
+
+.project-box .reviews .review-input {
+    display: flex;
+    flex-direction: row;
+    width: initial;
+    padding: 10px;
+}
+
+.project-box .reviews ul li {
+    border-bottom: 1px solid gainsboro;
+}
+
+.project-box .reviews .review-input input {
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+}
+
+#left #user-info img {
+    height: 70px;
+    width: 70px;
+}
+
+#left #user-info {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#left #user-info #name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#left #dialog-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+}
+
+#dialog-box #message-display {
+    height: 60vh;
+}
+
+#dialog-box #message-display ul {
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#dialog-box #message-input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#dialog-box #message-input input {
+    width: inherit;
+}
+
+#message-display .left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#message-display .right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#message-display .message-bubble {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+#message-display .message-bubble .message {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    /* inline-size: 200px; */
+    overflow-wrap: break-word;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-left: 10px solid var(--primary-color);
+    border-bottom: 15px solid transparent;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-right: 10px solid var(--primary-color);
+    border-bottom: 15px solid transparent;
+}
+
+
+@media (max-width: 991.98px) {
+    #left {
+        flex: 1;
+    }
+
+    #right {
+        display: none;
+    }
+
+    #header #search {
+        display: none;
+    }
+
+    #option-box .option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    #right {
+        padding: 10px;
+    }
+
+    #right .project-box {
+        width: 100%;
+    }
+}
+
+#small-scr-search {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-color);
+    padding: 5px;
+    display: none;
+}
+
+#small-scr-search input {
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    #main {
+        font-size: small;
+    }
+
+    .slides .clickText {
+        top: 85%;
+        left: 40%;
+    }
+}
